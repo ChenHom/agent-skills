@@ -59,5 +59,5 @@ OpenClaw 降本提效的核心，不是少用 AI，而是少把不必要的 toke
 - `references/openclaw-usage.md`
 
 ## Evals
-- `evals/README.md`
+- `evals/guide.md`
 - `evals/cases.md`
