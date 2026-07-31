@@ -17,8 +17,6 @@ shared/       多個 Skill 或 MCP 共用的規則、schema 與測試資料
 | Skill | 用途 |
 |---|---|
 | [`external-resource-safety`](skills/external-resource-safety/) | 檢查外部資源的間接提示詞注入、隱藏指令、擴權與來源污染風險 |
-| [`openclaw-cost-control`](skills/openclaw-cost-control/) | OpenClaw 工作流的模型分流、前後文縮減、快取與成本驗證 |
-| [`openclaw-cost-control-lite`](skills/openclaw-cost-control-lite/) | OpenClaw 成本控制的精簡版本 |
 | [`shioaji`](skills/shioaji/) | 永豐 Shioaji API 的行情、委託、帳務與串流操作 |
 
 ## 收錄規則
