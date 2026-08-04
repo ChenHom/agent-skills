@@ -18,6 +18,7 @@ shared/       多個 Skill 或 MCP 共用的規則、schema 與測試資料
 |---|---|
 | [`external-resource-safety`](skills/external-resource-safety/) | 檢查外部資源的間接提示詞注入、隱藏指令、擴權與來源污染風險 |
 | [`shioaji`](skills/shioaji/) | 永豐 Shioaji API 的行情、委託、帳務與串流操作 |
+| [`focused-test-generation`](skills/focused-test-generation/) | 小型專案、跨語言的聚焦式測試生成與需求—測試結果追蹤 |
 
 ## 收錄規則
 
