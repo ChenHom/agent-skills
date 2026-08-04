@@ -22,13 +22,13 @@ description: Generate tests for a small, bounded scope in any programming langua
 
 - 使用的語言、框架與測試 runner。
 - 專案既有的測試命名、目錄、fixture、mock/fake、斷言與非同步寫法。
-- 最窄的測試指令，以及完整測試、靜態分析或 lint 指令。
+- 精簡的測試指令，以及完整測試、靜態分析或 lint 指令。
 
 優先使用專案已定義的命令，不要自行引入新的測試框架。若找不到可執行的測試入口，先回報缺少的設定，不要假裝測試已完成。
 
 常見線索如下；它們只是偵測提示，不是固定指令：
 
-| 專案線索 | 優先查找 |
+| 專案線索 | 優先查詢 |
 | --- | --- |
 | `composer.json`、PHPUnit/Pest 設定 | `composer scripts` 與既有 test suite |
 | `package.json`、Jest/Vitest/Mocha 設定 | `scripts` 與既有 test pattern |
@@ -87,7 +87,7 @@ description: Generate tests for a small, bounded scope in any programming langua
 
 ### 5. 立即執行並迭代
 
-1. 先執行最窄的單一測試檔、案例或 package。
+1. 先執行最精簡的單一測試檔、案例或 package。
 2. 若編譯、載入或 runner 發現錯誤，依實際錯誤修正測試；確認 API、import、fixture 與 runner pattern，而不是修改 production code 讓測試通過。
 3. 若測試失敗，判斷是測試錯誤、需求與實作不一致，還是 production bug。保留可重現證據；不要把失敗改成 skip。
 4. 新增測試通過後，再從專案根目錄執行完整測試 suite。若專案已有 lint、型別檢查或靜態分析，也執行它們；沒有就不要自行增加新工具。
