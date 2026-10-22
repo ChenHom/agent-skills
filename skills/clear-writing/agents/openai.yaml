@@ -1,0 +1,4 @@
+interface:
+  display_name: "Clear Writing"
+  short_description: "清楚撰寫一般說明、報告、教學與技術交付，保留語意與創作風格"
+  default_prompt: "使用 $clear-writing 改寫這段內容，讓讀者容易理解，並保留原意與必要條件。"
