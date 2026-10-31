@@ -1,6 +1,6 @@
 ---
 name: resource-aware-development
-description: Use when developing a feature, designing data processing or choosing dependencies with resource constraints, or when investigating latency, throughput, memory, infrastructure capacity, or AI and service costs. Apply lightweight judgment to routine development and deeper analysis to material resource risks or measured performance problems.
+description: Use when developing or designing functionality with meaningful data volume, latency, throughput, memory, capacity, dependency, or cost constraints, or when investigating performance or AI and service spending. Do not use for ordinary low-impact edits without resource trade-offs.
 ---
 
 # Resource-Aware Development
@@ -9,7 +9,7 @@ description: Use when developing a feature, designing data processing or choosin
 
 ## 適用範圍
 
-- 功能開發或設計：依預期工作負載及風險考慮資源消耗。
+- 功能開發或設計：有明確或合理預期的資料量、延遲、容量、依賴或成本取捨時，依工作負載及風險考慮資源消耗。
 - 既有系統的效能、容量或成本問題：以量測與瓶頸分析決定改善方式。
 - 純文字或低風險的小改動：沿用一般工作流程，不強制建立基準、效能測試或額外產物。
 
@@ -29,6 +29,14 @@ description: Use when developing a feature, designing data processing or choosin
 3. 比較演算法、查詢、資料處理、設定、服務及擴容方案的效果、風險和總成本。必要的冗餘與容量餘裕也是需求。
 4. 小步修改，依可比較的條件量測前後差異，驗證正確性與可靠性；未經驗證不得宣稱改善。
 5. 達標或進一步改善的代價高於效益時停止；簡要記錄數據、取捨及剩餘問題。
+
+選用與實際環境相符的量測方法，參考 [量測工具與 AI 成本](references/measurement.md)；不要假定專案使用特定技術或直接變更監控設定。
+
+## AI 工作負載成本
+
+在成本或效能與 AI 呼叫有關時，按工作類型、模型和期間記錄請求次數、輸入／輸出 token、供應商回報的快取 token 與實際帳單，分別計算每次請求及成功任務成本。對快取記錄命中／查詢次數並說明 token 快取口徑；沒有數據就標示未知，不虛構命中率。
+
+比較模型路由、必要上下文與快取時，使用具代表性的任務集，檢查品質、延遲、錯誤率和費用；只有在品質與安全符合需求時才採用更省的方案。價格依實際供應商、模型與計費期間查證，不將估算當成帳單。
 
 遇到正在發生的故障或服務中斷，允許先採取已授權的擴容或其他止血措施，再補量測及根因分析；不要為等待完整基準延誤必要處置。
 
