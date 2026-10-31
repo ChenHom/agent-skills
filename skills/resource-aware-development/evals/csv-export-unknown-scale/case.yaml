@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: csv-export-unknown-scale
+expected_outcome: |
+  先釐清負載，再依預期規模選擇方案並驗證。

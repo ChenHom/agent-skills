@@ -19,7 +19,7 @@
 
 ## AI 用量與成本
 
-1. 用供應商 usage、billing 或既有追蹤，依模型及任務記錄請求次數、輸入／輸出 token、快取讀取／寫入 token（若有）、失敗與重試、延遲、成功數與計費期間。各供應商分類不同，避免重複計算已包含在 input 中的 cached tokens。
-2. 以計費期間適用價格計算分項成本，並對帳實際帳單；記錄幣別、單價與折扣。每次請求成本 = 可歸屬成本 ÷ 請求數；每個成功任務成本 = 總成本（含重試）÷ 成功任務數；分母為零時標示不可計算。
+1. 用供應商 usage、billing 或既有追蹤，依模型及任務記錄請求次數、輸入／輸出 token、快取讀取／寫入 token（若有）、失敗與重試、延遲、成功數與計費期間。各供應商分類不同，避免重複計算已包含在 input 中的 cached tokens。例如 [Anthropic](https://platform.claude.com/docs/en/build-with-claude/prompt-caching) 的 `input_tokens` 不含 `cache_read_input_tokens` 與 `cache_creation_input_tokens`，總輸入是三者相加；[OpenAI Chat Completions](https://developers.openai.com/cookbook/examples/prompt_caching101) 的 `prompt_tokens_details.cached_tokens` 是 `prompt_tokens` 的子集。欄位以供應商當前文件為準。
+2. 以計費期間適用價格計算分項成本，並對帳實際帳單；記錄幣別、單價與折扣，不將估算當成帳單。每次請求成本 = 可歸屬成本 ÷ 請求數；每個成功任務成本 = 總成本（含重試）÷ 成功任務數；分母為零時標示不可計算。
 3. 應用層快取命中率 = 命中次數 ÷ 快取查詢次數；供應商提示快取使用不同口徑，可另報 cached input tokens ÷ total input tokens（僅當前者是後者子集）。不可混稱或由 token 比例推算請求命中率；缺資料標示未知。
-4. 以代表性任務及相同品質標準比較模型路由、上下文長度與快取策略。記錄品質、延遲、錯誤率及單位成本；注意敏感資料和快取失效。只有品質符合需求才部署或建議切換。
+4. 以代表性任務及相同品質標準比較模型路由、必要前後文長度與快取策略。記錄品質、延遲、錯誤率及單位成本；注意敏感資料和快取失效。只有品質與安全都符合需求才部署或建議切換。

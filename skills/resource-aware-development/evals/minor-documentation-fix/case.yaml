@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: minor-documentation-fix
+expected_outcome: |
+  小修改只做相稱確認。

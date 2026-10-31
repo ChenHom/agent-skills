@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: environment-aware-measurement
+expected_outcome: |
+  先確認環境，再選擇有界且安全的觀測。

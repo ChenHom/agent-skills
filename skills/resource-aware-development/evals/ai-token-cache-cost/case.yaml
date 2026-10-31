@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: ai-token-cache-cost
+expected_outcome: |
+  以實際用量及品質比較單位成本。
